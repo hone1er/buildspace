@@ -18,6 +18,10 @@ contract MyWaveContract {
         console.log("GM");
     }
 
+    function getWavers() public view returns (Wave[] memory) {
+        return wavers;
+    }
+
     function wave(string memory _message) public {
         totalWaves += 1;
         console.log("%s has waved!", msg.sender);
@@ -28,9 +32,5 @@ contract MyWaveContract {
     function getTotalWaves() public view returns (uint256) {
         console.log("We have %d total waves!", totalWaves);
         return totalWaves;
-    }
-
-    function getWavers() public view returns (Wave[] memory) {
-        return wavers;
     }
 }
